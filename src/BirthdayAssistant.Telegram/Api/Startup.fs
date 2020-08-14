@@ -1,6 +1,12 @@
-﻿module BirthdayAssistant.Telegram.Startup
+﻿module BirthdayAssistant.Telegram.Api.Startup
+
+open BirthdayAssistant.Telegram.Api.Endpoints
 
 open Suave
+open Suave.Filters
+open Suave.Operators
+open Suave.Successful
+
 open System.Threading
 open Microsoft.Extensions.Configuration
 
@@ -24,13 +30,16 @@ let Run (webAppConfig: ApiStartupSettings) =
     let cts = new CancellationTokenSource()
     let suaveConfig = {
         defaultConfig with
-        cancellationToken = cts.Token
-        bindings = [ HttpBinding.createSimple HTTP webAppConfig.Host webAppConfig.Port ]
+            cancellationToken = cts.Token
+            bindings = [ HttpBinding.createSimple HTTP webAppConfig.Host webAppConfig.Port ]
     }
 
     let app =
       choose [
-      ]
+            GET >=> choose
+                [ path "/" >=> OK "Hello ROOT" ]
+            Static.NotFoundHandler
+          ]
 
     let server = startWebServerAsync suaveConfig app |> snd
       

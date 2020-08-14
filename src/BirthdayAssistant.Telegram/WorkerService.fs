@@ -1,5 +1,7 @@
 ﻿namespace BirthdayAssistant.Telegram
 
+open BirthdayAssistant.Telegram.Api
+
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging

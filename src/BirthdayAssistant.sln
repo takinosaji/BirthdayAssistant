@@ -4,6 +4,14 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BirthdayAssistant.Telegram"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BirthdayAssistant.AppCore", "BirthdayAssistant.AppCore\BirthdayAssistant.AppCore.fsproj", "{75F4D3DD-DC74-44A9-A3F4-4710567E37E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{92E6AA84-0309-4CC1-865C-23A2C6769573}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ngrok", "ngrok", "{3249B3F8-3CC6-469B-B75B-AF404CA0EA50}"
+ProjectSection(SolutionItems) = preProject
+	..\tools\ngrok\Run-NgrokContainer.ps1 = ..\tools\ngrok\Run-NgrokContainer.ps1
+	..\tools\ngrok\Run-NgrokExecutable.ps1 = ..\tools\ngrok\Run-NgrokExecutable.ps1
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +28,6 @@ Global
 		{75F4D3DD-DC74-44A9-A3F4-4710567E37E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{3249B3F8-3CC6-469B-B75B-AF404CA0EA50} = {92E6AA84-0309-4CC1-865C-23A2C6769573}
 	EndGlobalSection
 EndGlobal

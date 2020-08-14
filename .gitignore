@@ -353,3 +353,6 @@ MigrationBackup/
 
 .paket/
 paket-files/
+
+**/*.zip
+**/*.exe
